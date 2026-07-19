@@ -85,7 +85,11 @@ This reflects my approach to modern engineering: combining domain expertise with
 | Transcription errors | Risk present every cycle | Eliminated |
 | QC workload | Full duplicate PDF lookup | Instant paste verification |
 | Daily NOTAM volume affected | 50–60 NOTAMs per day | 50–60 NOTAMs per day |
-| Staff dependency | Single PDF document | Centrally maintained verified database | Deployment | Instant (single HTML file) |
+| Staff dependency | Single PDF document | Centrally maintained verified database |
+
+
+| Deployment |Instant (single HTML file) |
+| Installation required | None |
 
 **Operational window protected:** 12:00–13:00 UTC daily — the team's highest-volume, highest-pressure operational hour.
 
@@ -130,24 +134,6 @@ The most effective tools are often the simplest ones. RADAR required no server, 
 
 This project reinforced that operational improvements are not always driven by larger systems or more technology. Carefully observing repetitive workflows, understanding user behaviour, and removing friction at the right point can deliver disproportionate operational value. The best engineering solutions are often those that become almost invisible to the people who rely on them.
 
-
-## Architecture Framework 
-
-Romanian AIP
-        │
-        ▼
-AIRAC Coordinate Database
-        │
-        ▼
-RADAR (Single HTML)
-     │         │
-     ▼         ▼
- Analyst      QC
- Search     Verification
-     │         │
-     └────┬────┘
-          ▼
- Flight Planning System
 ---
 
 *Part of the **[Milin Solutions](https://milinsolutions.com)** portfolio.*
