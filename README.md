@@ -88,8 +88,9 @@ This reflects my approach to modern engineering: combining domain expertise with
 | Staff dependency | Single PDF document | Centrally maintained verified database |
 
 
-**Deployment:** Instant (single HTML file) 
-** Installation required:** None
+**Deployment:** Instant (single HTML file)
+
+**Installation required:** None.
 
 **Operational window protected:** 12:00–13:00 UTC daily — the team's highest-volume, highest-pressure operational hour.
 
