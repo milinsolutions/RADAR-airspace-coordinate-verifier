@@ -5,7 +5,7 @@
 ---
 
 ## Overview
-RADAR is a lightweight, browser-native operational safety tool that eliminates manual coordinate transcription errors in flight planning operations. Built as a single HTML file requiring zero installation, it serves as a verified single source of truth for Romanian airspace restriction coordinates — accessible instantly from any shared terminal or browser environment.
+RADAR is a lightweight, browser-native operational safety tool that eliminates manual coordinate transcription errors in flight planning operations. Built as a self-contained HTML application requiring zero installation, it serves as a verified single source of truth for Romanian airspace restriction coordinates — accessible instantly from any shared terminal or browser environment.
 
 ---
 
@@ -30,7 +30,7 @@ This forced a slow and safety-critical manual process:
 ## The Solution
 RADAR provides a fast, searchable browser interface that replaces the PDF lookup entirely. Analysts type an area name, instantly see the verified coordinates, and copy them to clipboard with one click — formatted exactly as required by the flight planning system, ready to paste without modification.
 
-A built-in QC verification engine allows reviewers to paste coordinates directly from the flight planning system and receives an instant "Green Approved" or "Red Discrepancy" result, eliminating the need to repeat the manual PDF lookup for quality checking.
+A built-in QC verification engine allows reviewers to paste coordinates directly from the flight planning system and receive an instant "Green Approved" or "Red Discrepancy" result, eliminating the need to repeat the manual PDF lookup for quality checking.
 
 ---
 
@@ -41,7 +41,7 @@ Single-file architecture intentionally chosen to maximize portability, simplify 
 Analyst types area name → Intelligent search filters and highlights matches → Analyst selects area → Coordinates displayed and copied to clipboard → Paste directly into flight planning system
 
 **QC flow:**
-Reviewer copies coordinates from flight planning system → Pastes into RADAR verification engine → Bidirectional text matching with whitespace normalization → Instant Green Approved or Red Discrepancy result
+Reviewer copies coordinates from flight planning system → Pastes into RADAR verification engine → Bidirectional text matching with whitespace normalization → Instant "Green Approved" or "Red Discrepancy" result
 
 ---
 
@@ -82,7 +82,7 @@ This reflects my approach to modern engineering: combining domain expertise with
 | Metric | Before RADAR | After RADAR |
 | --- | --- | --- |
 | Processing time per NOTAM | ~3 minutes | ~5 seconds |
-| Manual coordinate transcription | Eliminated |
+| Manual coordinate transcription | Required | Eliminated |
 | QC workload | Full duplicate PDF lookup | Instant paste verification |
 | Daily NOTAM volume affected | 50–60 NOTAMs/day | 50–60 NOTAMs/day |
 | Staff dependency | Individual PDF lookup | Centrally maintained verified database |
