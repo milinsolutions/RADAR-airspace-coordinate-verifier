@@ -10,7 +10,7 @@ RADAR is a lightweight, browser-native operational safety tool that eliminates m
 ---
 
 ## Executive Summary
-Developed to address a daily operational safety risk where analysts manually transcribed complex polygon coordinates from a 200-page PDF manual into a flight planning system under time pressure. RADAR replaces this error-prone process with instant verified retrieval and one-click clipboard delivery, reducing processing time from approximately 3 minutes to 5 seconds per NOTAM while eliminating transcription errors entirely.
+Developed to address a daily operational safety risk where analysts manually transcribed complex polygon coordinates from a 200-page PDF manual into a flight planning system under time pressure. RADAR replaces this error-prone process with instant verified retrieval and one-click clipboard delivery, reducing processing time from approximately 3-minutes to 5-seconds per NOTAM while eliminating the need for manual coordinate transcription.
 
 ---
 
@@ -21,7 +21,7 @@ This forced a slow and safety-critical manual process:
 
 - **Manual lookup:** Analyst searches through a dense 200-page PDF to locate the specific area
 - **Manual transcription:** Complex polygon coordinates — often 10–15 points per area — typed manually into the flight planning system
-- **Safety risk:** A single transcription error creates an inaccurate airspace definition with potential flight safety implications
+- **Safety risk:** A single transcription error can create an inaccurate airspace definition, introducing critical operational risk into the flight planning workflow
 - **Duplicated QC effort:** Quality checkers repeat the identical PDF lookup to verify each entry, effectively doubling the workload per NOTAM
 - **Time cost:** Approximately 3 minutes per NOTAM during the team's busiest operational window
 
@@ -35,7 +35,7 @@ A built-in QC verification engine allows reviewers to paste coordinates directly
 ---
 
 ## Architecture
-Single-file architecture. All logic, data, and UI contained within one HTML file with zero external dependencies. Deployed on a shared terminal server accessible from any browser without installation, configuration, or IT involvement.
+Single-file architecture intentionally chosen to maximize portability, simplify deployment, and eliminate runtime dependencies across shared operational workstations in fast pace environment. All logic, data, and UI contained within one HTML file with zero external dependencies. Deployed on a shared terminal server accessible from any browser without installation, configuration, or IT involvement.
 
 **Analyst flow:**
 Analyst types area name → Intelligent search filters and highlights matches → Analyst selects area → Coordinates displayed and copied to clipboard → Paste directly into flight planning system
@@ -61,7 +61,7 @@ Reviewer copies coordinates from flight planning system → Pastes into RADAR ve
 ## Technical Stack
 
 - **Core:** HTML5, CSS3, Vanilla JavaScript
-- **Dependencies:** None
+- **Browser APIs:** Clipboard API
 - **Deployment:** Single file, shared terminal server
 - **Data:** Coordinates sourced from public Romanian AIP, updated every AIRAC cycle
 
@@ -85,7 +85,7 @@ This reflects my approach to modern engineering: combining domain expertise with
 | Transcription errors | Risk present every cycle | Eliminated |
 | QC workload | Full duplicate PDF lookup | Instant paste verification |
 | Daily NOTAM volume affected | 50–60 NOTAMs per day | 50–60 NOTAMs per day |
-| Staff dependency | Single PDF document | Centrally maintained verified database |
+| Staff dependency | Single PDF document | Centrally maintained verified database | Deployment | Instant (single HTML file) |
 
 **Operational window protected:** 12:00–13:00 UTC daily — the team's highest-volume, highest-pressure operational hour.
 
@@ -103,6 +103,7 @@ Core design principles include:
 - AIRAC-aligned maintenance — update cycle matches regulatory publication rhythm
 - Safety over convenience — verification engine designed to catch errors, not just display data
 - Scalable framework — structure replicable for other complex airspace regions
+- Human-centred design — optimized around real analyst workflows rather than technical elegance.
 
 ---
 
@@ -127,6 +128,26 @@ Planned enhancements include:
 
 The most effective tools are often the simplest ones. RADAR required no server, no framework, no database, and no IT department involvement — yet it eliminated a genuine daily safety risk and halved QC workload. Choosing zero-dependency architecture was not a limitation but a deliberate design decision that made deployment instant and adoption frictionless. Domain expertise was the critical ingredient — understanding exactly how analysts work under time pressure during the 12:00–13:00 UTC window shaped every design decision from search behaviour to clipboard formatting.
 
+This project reinforced that operational improvements are not always driven by larger systems or more technology. Carefully observing repetitive workflows, understanding user behaviour, and removing friction at the right point can deliver disproportionate operational value. The best engineering solutions are often those that become almost invisible to the people who rely on them.
+
+
+## Architecture Framework 
+
+Romanian AIP
+        │
+        ▼
+AIRAC Coordinate Database
+        │
+        ▼
+RADAR (Single HTML)
+     │         │
+     ▼         ▼
+ Analyst      QC
+ Search     Verification
+     │         │
+     └────┬────┘
+          ▼
+ Flight Planning System
 ---
 
 *Part of the **[Milin Solutions](https://milinsolutions.com)** portfolio.*
