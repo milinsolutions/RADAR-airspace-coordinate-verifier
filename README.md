@@ -10,7 +10,7 @@ RADAR is a lightweight, browser-native operational safety tool that eliminates m
 ---
 
 ## Executive Summary
-Developed to address a daily operational safety risk where analysts manually transcribed complex polygon coordinates from a 200-page PDF manual into a flight planning system under time pressure. RADAR replaces this error-prone process with instant verified retrieval and one-click clipboard delivery, reducing processing time from approximately 3-minutes to 5-seconds per NOTAM while eliminating the need for manual coordinate transcription.
+Developed to address a daily operational safety risk where analysts manually transcribed complex polygon coordinates from a 200-page PDF manual into a flight planning system under time pressure. RADAR replaces this error-prone process with instant verified retrieval and one-click clipboard delivery, reducing processing time from approximately 3 minutes to 5 seconds per NOTAM while eliminating the need for manual coordinate transcription.
 
 ---
 
@@ -30,12 +30,12 @@ This forced a slow and safety-critical manual process:
 ## The Solution
 RADAR provides a fast, searchable browser interface that replaces the PDF lookup entirely. Analysts type an area name, instantly see the verified coordinates, and copy them to clipboard with one click — formatted exactly as required by the flight planning system, ready to paste without modification.
 
-A built-in QC verification engine allows reviewers to paste coordinates directly from the flight planning system and receive an instant Green Approved or Red Discrepancy result, eliminating the need to repeat the manual PDF lookup for quality checking.
+A built-in QC verification engine allows reviewers to paste coordinates directly from the flight planning system and receives an instant "Green Approved" or "Red Discrepancy" result, eliminating the need to repeat the manual PDF lookup for quality checking.
 
 ---
 
 ## Architecture
-Single-file architecture intentionally chosen to maximize portability, simplify deployment, and eliminate runtime dependencies across shared operational workstations in fast pace environment. All logic, data, and UI contained within one HTML file with zero external dependencies. Deployed on a shared terminal server accessible from any browser without installation, configuration, or IT involvement.
+Single-file architecture intentionally chosen to maximize portability, simplify deployment, and eliminate runtime dependencies across shared operational workstations supporting time-critical aviation operations. All logic, data, and UI contained within one HTML file with zero external dependencies. Deployed on a shared terminal server accessible from any browser without installation, configuration, or IT involvement.
 
 **Analyst flow:**
 Analyst types area name → Intelligent search filters and highlights matches → Analyst selects area → Coordinates displayed and copied to clipboard → Paste directly into flight planning system
@@ -80,17 +80,14 @@ This reflects my approach to modern engineering: combining domain expertise with
 ## Business Impact
 
 | Metric | Before RADAR | After RADAR |
-|---|---|---|
+| --- | --- | --- |
 | Processing time per NOTAM | ~3 minutes | ~5 seconds |
-| Transcription errors | Risk present every cycle | Eliminated |
+| Manual coordinate transcription | Eliminated |
 | QC workload | Full duplicate PDF lookup | Instant paste verification |
-| Daily NOTAM volume affected | 50–60 NOTAMs per day | 50–60 NOTAMs per day |
-| Staff dependency | Single PDF document | Centrally maintained verified database |
-
-
-**Deployment:** Instant (single HTML file)
-
-**Installation required:** None.
+| Daily NOTAM volume affected | 50–60 NOTAMs/day | 50–60 NOTAMs/day |
+| Staff dependency | Individual PDF lookup | Centrally maintained verified database |
+| Deployment | Manual PDF distribution | Instant (single HTML file) |
+| Installation | PDF reader required | None |
 
 **Operational window protected:** 12:00–13:00 UTC daily — the team's highest-volume, highest-pressure operational hour.
 
