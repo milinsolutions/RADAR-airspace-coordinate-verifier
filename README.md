@@ -8,6 +8,23 @@
 RADAR is a lightweight, browser-native operational safety tool that eliminates manual coordinate transcription errors in flight planning operations. Built as a self-contained HTML application requiring zero installation, it serves as a verified single source of truth for Romanian airspace restriction coordinates — accessible instantly from any shared terminal or browser environment.
 
 ---
+## Search Interface
+
+![RADAR Search Interface](docs/images/radar-search.png)
+
+*Instant retrieval of verified coordinates through intelligent search.*
+
+### Production View
+
+![Production Interface](docs/images/radar-production.png)
+
+*Coordinate retrieval interface used during operational processing.*
+
+### QC Verification
+
+![QC Verification](docs/images/radar-qc.png)
+
+*Paste-based verification engine for quality control.*
 
 ## Executive Summary
 Developed to address a daily operational safety risk where analysts manually transcribed complex polygon coordinates from a 200-page PDF manual into a flight planning system under time pressure. RADAR replaces this error-prone process with instant verified retrieval and one-click clipboard delivery, reducing processing time from approximately 3 minutes to 5 seconds per NOTAM while eliminating the need for manual coordinate transcription.
